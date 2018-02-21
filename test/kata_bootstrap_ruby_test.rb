@@ -11,8 +11,8 @@ class KataBootstrapRubyTest < Test::Unit::TestCase
     1984 => "MCMLXXXIV"
   }
 
-  def test_roman_numerals
-    CASES.each_pair do |integer, numeral|
+  CASES.each_pair do |integer, numeral|
+    define_method "test_#{integer}" do
       assert_equal numeral, integer.to_roman
     end
   end
